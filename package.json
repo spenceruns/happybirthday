@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
+    "@sanity/client": "^1.149.7",
+    "@sanity/image-url": "^0.140.18",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

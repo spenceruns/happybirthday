@@ -17,6 +17,14 @@ body {
   background-color: turquoise;
 
   &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
     font-size: 1rem;
+  }
+
+  &__image {
+    height: 200px;
   }
 }
