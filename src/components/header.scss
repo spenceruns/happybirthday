@@ -5,5 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+
+  &__bars {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+  }
 }
