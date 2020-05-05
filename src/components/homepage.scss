@@ -1,19 +1,18 @@
 .homepage {
+  padding: 0 15px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-flow: column;
   height: 100vh;
-  background-color: #c3edea;
+  background-color: #ededed;
 
-  &__test {
+  &__btn-container {
+    height: 75%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    font-size: 1rem;
-  }
-
-  &__image {
-    height: 200px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: wrap;
   }
 }
