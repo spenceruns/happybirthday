@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import client from '../helpers/sanity'
 import builder from '../helpers/image-url'
 import imageObj from '../helpers/imageBuilder'
-import './app.scss';
+import './app.scss'
 
 export default function App() {
-  const [test, setTest] = useState([]);
+  const [test, setTest] = useState([])
   useEffect(() => {
-    const query = `*[_type == "images"]`;
+    const query = `*[_type == "images"]`
 
     client.fetch(query).then(data => {
       setTest(data[0]);
-    });
-  }, []);
+    })
+  }, [])
   return (
     <div className="App">
       <header className="App__header">
@@ -24,5 +24,5 @@ export default function App() {
         <h1>Happy Birthday Lucy!</h1>
       </header>
     </div>
-  );
+  )
 }
