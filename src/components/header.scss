@@ -5,13 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f3eb;
   font-size: 12px;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.3);
 
   &__bars {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: relative;
+    left: -42px;
     font-size: 1.5rem;
   }
 }
