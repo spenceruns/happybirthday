@@ -12,9 +12,9 @@ export default function Horoscope(props) {
       .then(data => data.json())
       .then(horoscopeData => setHoroscope(horoscopeData))
   }, [])
-  console.log(horoscope)
   return (
     <div className="horoscope">
+      <i className="fas fa-angle-double-left horoscope__back" onClick={() => props.history.goBack()}></i>
       <div className="horoscope__title">Horoscope</div>
       <div className="horoscope__sign">{sign}</div>
       {!horoscope ? <div>Loading</div> : <Loaded horoscope={horoscope} />}
