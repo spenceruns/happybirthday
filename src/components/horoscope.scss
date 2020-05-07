@@ -7,6 +7,13 @@
   align-items: center;
   flex-flow: column;
 
+  &__back {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 2.5rem;
+  }
+
   &__title {
     font-weight: bold;
     font-size: 3.5rem;
