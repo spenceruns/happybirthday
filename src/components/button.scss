@@ -1,6 +1,5 @@
 .button {
   padding: 25px;
-  width: 48%;
   border-radius: 30px;
   background: rgb(255,81,81);
   background: linear-gradient(90deg, rgba(255,81,81,1) 72%, rgba(255,124,27,1) 100%);
@@ -18,4 +17,8 @@
     margin: 0;
     color: #ededed;
   }
+}
+
+.sizing {
+  width: 48%;
 }
