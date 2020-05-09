@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -11,4 +11,26 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.app {
+  background-color: #f0f4ff;
+
+  &__lower {
+  border-radius: 14px 14px 0 0;
+  background-color: #fff;
+  animation: 500ms slide-up cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
 }
