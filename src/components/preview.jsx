@@ -3,7 +3,6 @@ import './preview.scss'
 import ShortCard from './short-card'
 
 export default function Preview(props) {
-  console.log(props)
   return (
     <div className="preview">
       <div className="preview__header">

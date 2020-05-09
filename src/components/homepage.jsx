@@ -17,6 +17,8 @@ export default function Homepage(props) {
     <div className="homepage">
       <NavBar />
       <Preview name={'Photos'} assets={photos} />
+      <Preview name={'Notes'} assets={photos} />
+      <Preview name={'Horoscope'} assets={photos} />
     </div>
   )
 }
