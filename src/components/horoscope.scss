@@ -1,11 +1,11 @@
 .horoscope {
   padding: 15px;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-flow: column;
+  background-color: #fff;
 
   &__back {
     position: absolute;
