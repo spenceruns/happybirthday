@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 25px;
+
+  &__item {
+    font-size: 14px;
+  }
+}
+
+.selected {
+  position: relative;
+}
+
+.selected::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #4860fb;
+  position: absolute;
+  border-radius: 17px;
+}
