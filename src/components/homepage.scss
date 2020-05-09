@@ -1,18 +1,4 @@
 .homepage {
   padding: 0 40px;
-  border-radius: 14px 14px 0 0;
   background-color: #fff;
-  animation: 500ms slide-up cubic-bezier(0.04, 0.04, 0.12, 0.96);
-}
-
-@keyframes slide-up {
-  from {
-    margin-top: 100%;
-    height: 300%;
-  }
-
-  to {
-    margin-top: 0%;
-    height: 100%;
-  }
 }

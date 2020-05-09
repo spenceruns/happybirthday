@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import client from '../helpers/sanity'
-import builder from '../helpers/image-url'
-import imageObj from '../helpers/imageBuilder'
+import './homepage.scss'
+import Preview from './preview'
 
 export default function Photos(props) {
-  const [test, setTest] = useState([])
+  const [photos, setPhotos] = useState([])
   useEffect(() => {
     const query = `*[_type == "images"]`
 
     client.fetch(query).then(data => {
-      setTest(data[0]);
+      setPhotos(data);
     })
   }, [])
+
   return (
-    null
+    <div className="homepage">
+      <Preview name={'photos'} assets={photos} />
+    </div>
   )
 }

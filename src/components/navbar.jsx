@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { ViewContext } from '../helpers/context'
 import './navbar.scss'
 
 export default function NavBar(props) {
-  const [selected, setSelected] = useState("all")
-
+  const {view, setView} = useContext(ViewContext)
   return (
     <div className="navbar">
-      <div className={`navbar__item ${selected === "all" ? "selected" : ""}`} onClick={() => setSelected("all")}>All</div>
-      <div className={`navbar__item ${selected === "photos" ? "selected" : ""}`} onClick={() => setSelected("photos")}>Photos</div>
-      <div className={`navbar__item ${selected === "notes" ? "selected" : ""}`} onClick={() => setSelected("notes")}>Notes</div>
-      <div className={`navbar__item ${selected === "horoscope" ? "selected" : ""}`} onClick={() => setSelected("horoscope")}>Horoscope</div>
+      <Link to="/">
+        <div className={`navbar__item ${view === "all" ? "selected" : ""}`} onClick={() => setView("all")}>All</div>
+      </Link>
+      <Link to="/photos">
+        <div className={`navbar__item ${view === "photos" ? "selected" : ""}`} onClick={() => setView("photos")}>Photos</div>
+      </Link>
+      <Link to="/notes">
+        <div className={`navbar__item ${view === "notes" ? "selected" : ""}`} onClick={() => setView("notes")}>Notes</div>
+      </Link>
+      <Link to="/horoscope">
+        <div className={`navbar__item ${view === "horoscope" ? "selected" : ""}`} onClick={() => setView("horoscope")}>Horoscope</div>
+      </Link>
     </div>
   )
 }
