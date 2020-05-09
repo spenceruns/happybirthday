@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import client from '../helpers/sanity'
 import './homepage.scss'
-import Header from './header'
 import NavBar from './navbar'
+import Preview from './preview'
 
 export default function Homepage(props) {
+  const [photos, setPhotos] = useState([])
+  useEffect(() => {
+    const query = `*[_type == "images"][0..3]`
+
+    client.fetch(query).then(data => {
+      setPhotos(data);
+    })
+  }, [])
   return (
     <div className="homepage">
-      <Header />
-      <div className="homepage__lower">
-        <NavBar />
-      </div>
+      <NavBar />
+      <Preview name={'Photos'} assets={photos} />
     </div>
   )
 }
