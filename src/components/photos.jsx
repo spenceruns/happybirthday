@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import client from '../helpers/sanity'
-import './homepage.scss'
-import Preview from './preview'
+import React, { useContext } from 'react'
+import { PhotoContext } from '../helpers/context'
+import './photos.scss'
+import Card from './card'
 
 export default function Photos(props) {
-  const [photos, setPhotos] = useState([])
-  useEffect(() => {
-    const query = `*[_type == "images"]`
-
-    client.fetch(query).then(data => {
-      setPhotos(data);
-    })
-  }, [])
-
+  const { photos } = useContext(PhotoContext)
+  for (let i = photos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * i)
+    const temp = photos[i]
+    photos[i] = photos[j]
+    photos[j] = temp
+  }
   return (
-    <div className="homepage">
-      <Preview name={'photos'} assets={photos} />
+    <div className="photos">
+      {photos.length === 0 ?
+        (<div>Loading</div>) : (
+          photos.map(photo => <Card key={photo.name} {...photo}/>)
+        )}
     </div>
   )
 }

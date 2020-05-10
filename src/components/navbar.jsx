@@ -8,7 +8,7 @@ export default function NavBar(props) {
   return (
     <div className="navbar">
       <Link to="/">
-        <div className={`navbar__item ${view === "all" ? "selected" : ""}`} onClick={() => setView("all")}>All</div>
+        <div className={`navbar__item ${view === "all" || view === "" ? "selected" : ""}`} onClick={() => setView("all")}>All</div>
       </Link>
       <Link to="/photos">
         <div className={`navbar__item ${view === "photos" ? "selected" : ""}`} onClick={() => setView("photos")}>Photos</div>
