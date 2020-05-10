@@ -14,6 +14,12 @@ export default {
       name: 'image',
       type: 'array',
       of: [{ type: 'image' }]
+    },
+    {
+      title: 'Person',
+      name: 'person',
+      type: 'string',
+      validation: Rule => Rule.required()
     }
   ]
 };
