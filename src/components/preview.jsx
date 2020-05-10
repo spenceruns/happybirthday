@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ViewContext } from '../helpers/context'
 import './preview.scss'
 import ShortCard from './short-card'
-import Loading from './loading';
 
 export default function Preview(props) {
   const { setView } = useContext(ViewContext)
@@ -19,10 +18,8 @@ export default function Preview(props) {
         </Link>
       </div>
       <div className="preview__container">
-        {props.assets.length !== 0 ?
-          props.assets.map(asset => <ShortCard key={asset.name} {...asset} />)
-        :
-        <Loading />}
+        {props.assets.length !== 0 &&
+          props.assets.map(asset => <ShortCard key={asset.name} {...asset} />)}
       </div>
     </div>
   )

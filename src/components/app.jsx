@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import { ViewContext, PhotoContext, NoteContext } from '../helpers/context'
+import { ViewContext } from '../helpers/context'
 import client from '../helpers/sanity'
 import './app.scss'
 import Header from './header';
@@ -15,34 +15,30 @@ import Horoscope from './horoscope'
 
 export default function App(props) {
   const [view, setView] = useState(window.location.pathname.slice(1))
-  const [photos, setPhotos] = useState([])
-  const [notes, setNotes] = useState([])
+  const [data, setData] = useState([])
   useEffect(() => {
-    const photoQuery = `*[_type == "images"]`
-    const noteQuery = `*[_type == "notes"]`
-
-    client.fetch(photoQuery).then(data => {
-      setPhotos(data);
-    })
-    client.fetch(noteQuery).then(data => {
-      setNotes(data);
-    })
+    const query = `{
+      "photos": *[_type == "images"],
+      "notes": *[_type == "notes"]
+    }`
+    client.fetch(query)
+      .then(data => {
+        setData(data)
+      })
   }, [])
   return (
     <ViewContext.Provider value={{ view, setView }}>
-      <PhotoContext.Provider value={{ photos }}>
-        <NoteContext.Provider value={{ notes }}>
-          <Router>
-            <Header />
-            <NavBar />
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/photos" component={Photos} />
-              <Route path="/horoscope" component={Horoscope} />
-            </Switch>
-          </Router>
-        </NoteContext.Provider>
-      </PhotoContext.Provider>
+      <Router>
+        <Header />
+        <NavBar />
+        {data.length !== 0 &&
+          <Switch>
+            <Route exact path="/" render={() => <HomePage photos={data.photos.slice(0, 4)} />} />
+            <Route path="/photos" render={() => <Photos photos={data.photos} />} />
+            <Route path="/horoscope" component={Horoscope} />
+          </Switch>
+        }
+      </Router>
     </ViewContext.Provider>
   )
 }

@@ -4,7 +4,6 @@ import builder from '../helpers/image-url'
 import imageObj from '../helpers/imageBuilder'
 
 export default function ShortCard(props) {
-  // console.log(props)
   return (
     <div className="short-card">
       { props.image &&
