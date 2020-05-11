@@ -11,6 +11,7 @@ import Header from './header';
 import NavBar from './navbar'
 import HomePage from './homepage'
 import Photos from './photos'
+import Notes from './notes'
 import Horoscope from './horoscope'
 
 export default function App(props) {
@@ -33,8 +34,9 @@ export default function App(props) {
         <NavBar />
         {data.length !== 0 &&
           <Switch>
-            <Route exact path="/" render={() => <HomePage photos={data.photos.slice(0, 4)} />} />
+            <Route exact path="/" render={() => <HomePage photos={data.photos.slice(0, 4)} notes={data.notes.slice(0, 4)} />} />
             <Route path="/photos" render={() => <Photos photos={data.photos} />} />
+            <Route path="/notes" render={() => <Notes notes={data.notes} />} />
             <Route path="/horoscope" component={Horoscope} />
           </Switch>
         }
