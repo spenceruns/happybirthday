@@ -1,0 +1,12 @@
+.short-card {
+height: 165px;
+width: 135px;
+margin: 10px 0 10px 0;
+
+  img{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+}

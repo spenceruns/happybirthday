@@ -1,0 +1,44 @@
+.horoscope {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  background-color: #fff;
+
+  &__back {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 2.5rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-top: 30px;
+  }
+
+  &__sign {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-weight: bold;
+    width: 50%;
+  }
+
+  &__text {
+    font-weight: lighter;
+  }
+}
