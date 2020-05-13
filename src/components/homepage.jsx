@@ -7,7 +7,7 @@ export default function Homepage({ photos, notes }) {
     <div className="homepage">
       <Preview name={'photos'} assets={photos} />
       <Preview name={'notes'} assets={notes} />
-      <Preview name={'horoscope'} assets={photos} />
+      {/* <Preview name={'horoscope'} assets={photos} /> */}
     </div>
   )
 }
