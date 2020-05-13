@@ -25,3 +25,9 @@
   position: absolute;
   border-radius: 17px;
 }
+
+@media (min-width: 600px) {
+  .selected {
+    display: none;
+  }
+}

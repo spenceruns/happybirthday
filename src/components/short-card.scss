@@ -1,7 +1,10 @@
 .short-card {
-height: 165px;
-width: 135px;
-margin: 10px 0 10px 0;
+  height: 165px;
+  width: 135px;
+  margin: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img{
     height: 100%;

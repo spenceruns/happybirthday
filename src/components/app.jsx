@@ -13,6 +13,7 @@ import HomePage from './homepage'
 import Photos from './photos'
 import Notes from './notes'
 import Horoscope from './horoscope'
+import Cover from './cover';
 
 export default function App(props) {
   const [view, setView] = useState(window.location.pathname.slice(1))
@@ -30,6 +31,7 @@ export default function App(props) {
   return (
     <ViewContext.Provider value={{ view, setView }}>
       <Router>
+        <Cover />
         <Header />
         <NavBar />
         {data.length !== 0 &&
