@@ -5,6 +5,9 @@
     margin: 15px 0 0 0;
     border-radius: 25px;
     object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__name {
     font-weight: 300;
