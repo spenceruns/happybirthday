@@ -6,7 +6,6 @@ import imageObj from '../helpers/imageBuilder'
 import Note from './note'
 
 export default function Modal(props) {
-  console.log(props)
   return createPortal(
     <div className="modal">
       <div className="modal__shadow" onClick={props.close}/>

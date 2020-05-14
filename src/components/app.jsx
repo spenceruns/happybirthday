@@ -28,7 +28,6 @@ export default function App(props) {
       setData(data)
     })
   }, [])
-  console.log("render")
   return (
     <ViewContext.Provider value={{ view, setView }}>
       <Router>
