@@ -24,9 +24,9 @@ export default function App(props) {
       "notes": *[_type == "notes"]
     }`
     client.fetch(query)
-      .then(data => {
-        setData(data)
-      })
+    .then(data => {
+      setData(data)
+    })
   }, [])
   return (
     <ViewContext.Provider value={{ view, setView }}>
