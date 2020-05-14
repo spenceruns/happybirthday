@@ -21,7 +21,7 @@
     font-size: 3rem;
     top: 0;
     right: 10px;
-    z-index: 101;
+    z-index: 105;
   }
 
   &__content {
@@ -31,19 +31,29 @@
     transform: translate(-50%, -50%);
     min-height: 44%;
     width: 100%;
-    border-radius: 25px 25px 0 0;
     overflow-y: auto;
     z-index: 101;
+
+    img {
+      border-radius: 25px;
+      max-height: 80%;
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+  &__note {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
 
-    img {
-      border-radius: 25px;
-      max-height: 100%;
-      width: 100%;
-      margin-top: 15px;
+    &__name {
+      margin-right: 50px;
+      align-self: flex-end;
     }
   }
 }
