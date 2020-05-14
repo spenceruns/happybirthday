@@ -12,7 +12,7 @@ export default function Photos({ photos }) {
   return (
     <div className="photos">
       {photos.length !== 0 &&
-        photos.map(photo => <Card key={photo.name} {...photo}/>)}
+        photos.map(photo => <Card key={photo.name} {...photo} />)}
     </div>
   )
 }
