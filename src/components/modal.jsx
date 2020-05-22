@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 import { createPortal } from 'react-dom'
 import './modal.scss'
 import builder from '../helpers/image-url'
 import imageObj from '../helpers/imageBuilder'
 
 export default function Modal(props) {
+  useLayoutEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => document.body.style.overflow = originalStyle;
+  }, []);
   return createPortal(
     <div className="modal">
       <div className="modal__shadow" onClick={props.close}/>
